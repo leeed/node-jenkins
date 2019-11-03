@@ -24,12 +24,8 @@ class App {
             res.status(200).send('Home! app')
         })
 
-        this.app.get('/test', (req: express.Request, res: express.Response) => {            
-            res.send('hello world!');
-        });
-
-        this.app.get('/saluda/:name', (req: express.Request, res: express.Response) => {            
-            res.send('hello ' + req.params.name + '!');
+        this.app.get('/greet/:name', (req: express.Request, res: express.Response) => {            
+            res.send(this.greet(req.params.name));
         });
 
         this.app.route('/products').get((req: express.Request, res: express.Response) => {
@@ -40,6 +36,10 @@ class App {
             res.status(200).send(products);
         });
     }
+
+    public greet(name: string) {
+        return 'Hello ' + name + '!';
+    }
 }
 
-export default new App().app;
+export default new App();
