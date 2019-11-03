@@ -1,0 +1,35 @@
+{
+  "name": "node-jenkins-ci",
+  "version": "1.0.0",
+  "description": "c build and delivery, node docker jenkins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "ts-node ./src/server.ts",
+    "start-dev": "nodemon --ext ts --exec ts-node --delay 3 ./src/server.ts",
+    "prod": "npm run build && npm run start-prod",
+    "start-prod": "nodemon ./build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeed/node-jenkins.git"
+  },
+  "keywords": [
+    "nodejs",
+    "docker",
+    "jenkins"
+  ],
+  "author": "lee ed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeed/node-jenkins/issues"
+  },
+  "homepage": "https://github.com/leeed/node-jenkins#readme",
+  "dependencies": {
+    "@types/express": "^4.17.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
+  }
+}
