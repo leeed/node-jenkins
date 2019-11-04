@@ -65,9 +65,6 @@ pipeline {
                 failure{
                     echo 'Tests failed'
                 }
-                always {
-                  //
-                }
             }
         }
         stage('Build') {
