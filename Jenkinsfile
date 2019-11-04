@@ -32,7 +32,7 @@ pipeline {
             }
         }
         
-        stage('Slave'){
+        /*stage('Slave'){
             agent { node { label "Slave" } }
             steps{
                 //dir("${env.WORKSPACE}/node-jenkins"){
@@ -41,7 +41,7 @@ pipeline {
                     }
                 //}
             }
-        }
+        }*/
         
         stage('StartUp'){
             steps{
